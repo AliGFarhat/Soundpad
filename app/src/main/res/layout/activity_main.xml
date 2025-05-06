@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/soundboardView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Soundpad"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/stopButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stop"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2">
+
+                    <include
+                    android:id="@+id/btn00"
+                        layout="@layout/sound_button_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill_horizontal"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="2dp" />
+
+                    <include
+                    android:id="@+id/btn01"
+                        layout="@layout/sound_button_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <include
+                        android:id="@+id/btn02"
+                        layout="@layout/sound_button_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <include
+                        android:id="@+id/btn03"
+                        layout="@layout/sound_button_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <include
+                        android:id="@+id/btn04"
+                        layout="@layout/sound_button_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <include
+                        android:id="@+id/btn10"
+                        layout="@layout/sound_button_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <include
+                        android:id="@+id/btn11"
+                        layout="@layout/sound_button_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <include
+                        android:id="@+id/btn12"
+                        layout="@layout/sound_button_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <include
+                        android:id="@+id/btn13"
+                        layout="@layout/sound_button_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <include
+                        android:id="@+id/btn14"
+                        layout="@layout/sound_button_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <include
+                        android:id="@+id/btn20"
+                        layout="@layout/sound_button_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <include
+                        android:id="@+id/btn21"
+                        layout="@layout/sound_button_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <include
+                        android:id="@+id/btn22"
+                        layout="@layout/sound_button_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <include
+                        android:id="@+id/btn23"
+                        layout="@layout/sound_button_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <include
+                        android:id="@+id/btn24"
+                        layout="@layout/sound_button_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <include
+                        android:id="@+id/btn30"
+                        layout="@layout/sound_button_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <include
+                        android:id="@+id/btn31"
+                        layout="@layout/sound_button_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <include
+                        android:id="@+id/btn32"
+                        layout="@layout/sound_button_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <include
+                        android:id="@+id/btn33"
+                        layout="@layout/sound_button_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="2dp" />
+
+                    <include
+                        android:id="@+id/btn34"
+                        layout="@layout/sound_button_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="2dp" />
+            </GridLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/favoritesView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                android:text="Favorites"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/stopButtonFavorites"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stop"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/favoritesRecyclerView"
+                android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </ScrollView>
+        </LinearLayout>
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_nav_menu" />
+</LinearLayout>

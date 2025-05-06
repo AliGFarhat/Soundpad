@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<color-state-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Pressed state -->
+    <item android:state_pressed="true" android:color="#5D5D5D" />
+    <!-- Selected/playing state -->
+    <item android:state_selected="true" android:color="#444444" />
+    <!-- Default state -->
+    <item android:color="?attr/colorPrimary" />
+</color-state-list> 
