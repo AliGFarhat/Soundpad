@@ -47,9 +47,20 @@ class FavoritesAdapter(
         
         holder.soundButton.setOnClickListener { onItemClick(sound) }
         
-        // Always show the filled star for favorites
-        holder.favoriteButton.setImageResource(R.drawable.ic_star_filled)
-        holder.favoriteButton.setOnClickListener { onFavoriteClick(sound) }
+        // Show filled or hollow star based on favorite status
+        if (sound.isFavorite) {
+            holder.favoriteButton.setImageResource(R.drawable.ic_star_filled)
+        } else {
+            holder.favoriteButton.setImageResource(R.drawable.ic_star_hollow)
+        }
+        holder.favoriteButton.setOnClickListener {
+            // Toggle favorite status and update icon immediately
+            val newFavoriteStatus = !sound.isFavorite
+            onFavoriteClick(sound.copy(isFavorite = newFavoriteStatus))
+            holder.favoriteButton.setImageResource(
+                if (newFavoriteStatus) R.drawable.ic_star_filled else R.drawable.ic_star_hollow
+            )
+        }
     }
 
     override fun getItemCount() = sounds.size
