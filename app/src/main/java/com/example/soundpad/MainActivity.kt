@@ -193,7 +193,7 @@ class MainActivity : AppCompatActivity() {
         })
         
         viewModel.playingSound.observe(this, Observer { sound ->
-            // Update all buttons to show which one is playing
+            // Updates the state of all the buttons at once to check which one is playing a sound.
             updateSoundButtons(viewModel.sounds.value ?: emptyList())
         })
     }
@@ -210,7 +210,7 @@ class MainActivity : AppCompatActivity() {
             onFavoriteClick = { sound ->
                 viewModel.toggleFavorite(sound)
             },
-            playingSound = null // Initially no sound playing
+            playingSound = null // This will make it so sounds do not play initially.
         )
 
         binding.favoritesRecyclerView.apply {

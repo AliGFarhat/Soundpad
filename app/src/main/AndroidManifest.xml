@@ -24,18 +24,27 @@
         android:theme="@style/Theme.Soundpad"
         tools:targetApi="31">
 
+        <!-- Splash Activity -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Soundpad"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
+            
+            <!-- Launcher intent -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Soundpad"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
-
-            <!-- Launcher intent -->
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
             <!-- Audio file selector intent with persistable permissions -->
             <intent-filter>
