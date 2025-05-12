@@ -9,17 +9,22 @@ import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
+// Handles data operations for sounds.
 class SoundRepository(private val context: Context) {
+    // DataStore for storing sound preferences.
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "soundpad_prefs")
 
     companion object {
         private val SOUND_PREFIX = "sound_"
         private val FAVORITE_PREFIX = "fav_"
 
+        // Generates a preference key for a sound.
         private fun getSoundKey(id: Int) = stringPreferencesKey("${SOUND_PREFIX}$id")
+        // Generates a preference key for a favorite sound.
         private fun getFavoriteKey(id: Int) = stringPreferencesKey("${FAVORITE_PREFIX}$id")
     }
 
+    // Saves or updates a sound item.
     suspend fun saveSound(sound: SoundItem) {
         context.dataStore.edit { prefs ->
             prefs[getSoundKey(sound.id)] = "${sound.name}|${sound.uri}"
@@ -31,6 +36,7 @@ class SoundRepository(private val context: Context) {
         }
     }
 
+    // Removes a sound item.
     suspend fun removeSound(id: Int) {
         context.dataStore.edit { prefs ->
             prefs.remove(getSoundKey(id))
@@ -38,6 +44,7 @@ class SoundRepository(private val context: Context) {
         }
     }
 
+    // Toggles the favorite status of a sound.
     suspend fun toggleFavorite(sound: SoundItem) {
         context.dataStore.edit { prefs ->
             if (sound.isFavorite) {
@@ -49,6 +56,7 @@ class SoundRepository(private val context: Context) {
         }
     }
 
+    // Gets all saved sounds as a Flow.
     fun getSounds(): Flow<List<SoundItem>> {
         return context.dataStore.data.map { prefs ->
             prefs.asMap()
@@ -63,6 +71,7 @@ class SoundRepository(private val context: Context) {
         }
     }
 
+    // Gets all favorite sounds as a Flow.
     fun getFavorites(): Flow<List<SoundItem>> {
         return context.dataStore.data.map { prefs ->
             prefs.asMap()
