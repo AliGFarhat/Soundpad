@@ -34,6 +34,15 @@
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
+                <ImageButton
+                    android:id="@+id/helpButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_help"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Help"
+                    android:layout_marginEnd="8dp" />
+
                 <Button
                     android:id="@+id/stopButton"
                     android:layout_width="wrap_content"
@@ -276,6 +285,15 @@
                 android:text="Favorites"
                 android:textSize="24sp"
                 android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/helpButtonFavorites"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_help"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Help"
+                    android:layout_marginEnd="8dp" />
 
                 <Button
                     android:id="@+id/stopButtonFavorites"

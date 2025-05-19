@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Soundpad</string>
+    <string name="instructions_title">Welcome to Soundpad!</string>
+    <string name="instructions_message">This app takes user imported audio that can be played with the tap of a button. You can favorite by pressing the star button and view it in the Favorites tab.</string>
+    <string name="got_it">Got it!</string>
 </resources>

@@ -1,11 +1,17 @@
 package com.example.soundpad
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Intent
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.provider.OpenableColumns
+import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
@@ -26,6 +32,8 @@ class MainActivity : AppCompatActivity() {
     private var mediaPlayer: MediaPlayer? = null
     private val buttonColor = android.graphics.Color.parseColor("#c80923") // Original state of the button (color)
     private val grayColor = android.graphics.Color.parseColor("#757575") // Gray color button when its playing a sound
+    private val FIRST_LAUNCH_KEY = "isFirstLaunch"
+    private val POPUP_DELAY = 1000L // Longer delay for testing
 
     private val soundPicker = registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
         uri?.let {
@@ -54,6 +62,14 @@ class MainActivity : AppCompatActivity() {
         setupObservers()
         setupFavoritesRecyclerView()
         setupStopButtons()
+        setupHelpButtons()
+        
+        Toast.makeText(this, "MainActivity started", Toast.LENGTH_SHORT).show()
+        
+        // Force show popup after a delay using custom layout
+        Handler(Looper.getMainLooper()).postDelayed({
+            showInstructionsPopup()
+        }, POPUP_DELAY)
     }
 
     private fun setupStopButtons() {
@@ -385,6 +401,48 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return name?.substringBeforeLast('.')
+    }
+
+    private fun setupHelpButtons() {
+        binding.helpButton.setOnClickListener {
+            showInstructionsPopup()
+        }
+        
+        binding.helpButtonFavorites.setOnClickListener {
+            showInstructionsPopup()
+        }
+    }
+    
+    private fun showInstructionsPopup() {
+        Log.d("MainActivity", "showInstructionsPopup called")
+        
+        try {
+            // Use a custom Dialog with our styling
+            val dialog = Dialog(this)
+            dialog.setContentView(R.layout.instructions_popup)
+            
+            // Set dialog width to match parent
+            val window = dialog.window
+            window?.setLayout(
+                android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+                android.view.ViewGroup.LayoutParams.WRAP_CONTENT
+            )
+            
+            // Make dialog cancelable on outside touch
+            dialog.setCancelable(true)
+            dialog.setCanceledOnTouchOutside(true)
+            
+            // Dismiss dialog when "Got it" button is clicked
+            val btnGotIt = dialog.findViewById<Button>(R.id.btnGotIt)
+            btnGotIt.setOnClickListener {
+                dialog.dismiss()
+            }
+            
+            dialog.show()
+        } catch (e: Exception) {
+            Log.e("MainActivity", "Error showing popup: ${e.message}")
+            e.printStackTrace()
+        }
     }
 
     override fun onDestroy() {
