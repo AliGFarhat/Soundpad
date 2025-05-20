@@ -64,8 +64,6 @@ class MainActivity : AppCompatActivity() {
         setupStopButtons()
         setupHelpButtons()
         
-        Toast.makeText(this, "MainActivity started", Toast.LENGTH_SHORT).show()
-        
         // Force show popup after a delay using custom layout
         Handler(Looper.getMainLooper()).postDelayed({
             showInstructionsPopup()
